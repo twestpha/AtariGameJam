@@ -6,6 +6,8 @@ public class PlayerComponent : MonoBehaviour {
 
     private Plane plane;
 
+    public float damage;
+
     public GameObject offset;
 
     public GameObject wing1;
@@ -49,6 +51,7 @@ public class PlayerComponent : MonoBehaviour {
         if(Input.GetMouseButtonDown(0)){
             GameObject bullet = Object.Instantiate(bulletPrefab);
             bullet.transform.position = transform.position;
+            bullet.GetComponent<ProjectileComponent>().damage = damage;
             particle.GetComponent<ParticleSystem>().Play();
             Camera.main.GetComponent<CameraShakeComponent>().AddSmallShake();
         }

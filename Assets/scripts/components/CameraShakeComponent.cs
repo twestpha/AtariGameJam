@@ -9,12 +9,15 @@ public class CameraShakeComponent : MonoBehaviour {
     public float shakeAmountTranslation;
     public float shakeAmountRotation;
 
-	void Start(){
+    private Vector3 startPosition;
+    private Quaternion startRotation;
 
+	void Start(){
+        startPosition = transform.localPosition;
+        startRotation = transform.rotation;
 	}
 
 	void Update(){
-
         shakeAmountTotal -= cooldownRate * Time.deltaTime;
         shakeAmountTotal = Mathf.Clamp(shakeAmountTotal, 0.0f, 1.0f);
 
@@ -23,6 +26,9 @@ public class CameraShakeComponent : MonoBehaviour {
                                                   200.0f + 20.0f * shakeAmountTotal * shakeAmountTranslation * Mathf.Cos(27.0f * Time.time),
                                                   shakeAmountTotal * shakeAmountTranslation * Mathf.Cos(33.0f * Time.time));
             transform.rotation = Quaternion.Euler(90.0f, 0.0f, shakeAmountTotal * shakeAmountRotation * (Mathf.Sin(29.0f * Time.time) + Mathf.Sin(50.0f * Time.time)));
+        } else {
+            transform.localPosition = startPosition;
+            transform.rotation = startRotation;
         }
 	}
 

@@ -7,6 +7,8 @@ public class ProjectileComponent : MonoBehaviour {
     public float speed = 0.0f;
     public float destroyDistance = 100.0f;
 
+    public float damage;
+
     private Vector3 startPosition;
 
     void Start(){
