@@ -23,7 +23,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 20414
+  controlID: 38932
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -53,7 +53,7 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_MaximizeOnPlay: 1
   m_Gizmos: 0
-  m_Stats: 0
+  m_Stats: 1
   m_SelectedSizes: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_TargetDisplay: 0
   m_ZoomArea:
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 20415
+  controlID: 38933
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 20392
+  controlID: 38934
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -203,8 +203,8 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 78ecf4ff
-    m_LastClickedID: 0
+    m_SelectedIDs: 9292f8ff
+    m_LastClickedID: -486766
     m_ExpandedIDs: a436f5ff9efbffff0000000038280000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -282,14 +282,14 @@ MonoBehaviour:
     height: 645
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 60862.27679935088
+  lastFramingTime: 94280.66961548978
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 9.279032, y: -2.899456, z: 1.957448}
+    m_Target: {x: 10.175547, y: -42.23133, z: 5.268213}
     speed: 2
-    m_Value: {x: 9.279032, y: -2.899456, z: 1.957448}
+    m_Value: {x: 10.175547, y: -42.23133, z: 5.268213}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -313,13 +313,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.63026834, y: -0.036758233, z: 0.02989768, w: -0.7749302}
+    m_Target: {x: -0.69381875, y: -0.0060478477, z: 0.0058286237, w: -0.7201007}
     speed: 2
-    m_Value: {x: -0.63026834, y: -0.036758233, z: 0.02989768, w: -0.7749302}
+    m_Value: {x: -0.69381875, y: -0.0060478477, z: 0.0058286237, w: -0.7201007}
   m_Size:
-    m_Target: 55.560535
+    m_Target: 82.139854
     speed: 2
-    m_Value: 55.560535
+    m_Value: 82.139854
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -396,18 +396,18 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/prefabs
+    - Assets/materials/particles
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/prefabs
+  - Assets/materials/particles
   m_LastFoldersGridSize: 96
   m_LastProjectPath: C:\Users\Trevor\Code\AtariGameJam
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: fa730000
-    m_LastClickedID: 29690
+    m_SelectedIDs: 6cb80000
+    m_LastClickedID: 47212
     m_ExpandedIDs: 0000000066270000ba270000d8270000ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -461,8 +461,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 78ecf4ff
-    m_LastClickedInstanceID: -725896
+    m_SelectedInstanceIDs: 9292f8ff
+    m_LastClickedInstanceID: -486766
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 7225000084340000d2070000da25000086250000be9a0200f4e1ffffeed8fcffa0dc01002a2900003e2700007e270000342700007aa90300eaf5040038260000182a000054270000602700003e970000324a04002e2c00001eda0100762f00007247090030350000302900009027000000000000
     m_RenameOverlay:
@@ -570,7 +570,7 @@ MonoBehaviour:
     width: 510
     height: 966
   m_PersistentViewDataDictionary: {fileID: 0}
-  m_ScrollPosition: {x: 0, y: 0}
+  m_ScrollPosition: {x: 0, y: 96.95508}
   m_InspectorMode: 0
   m_PreviewResizer:
     m_CachedPref: 212

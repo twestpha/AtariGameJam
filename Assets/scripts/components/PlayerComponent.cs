@@ -50,6 +50,7 @@ public class PlayerComponent : MonoBehaviour {
             GameObject bullet = Object.Instantiate(bulletPrefab);
             bullet.transform.position = transform.position;
             particle.GetComponent<ParticleSystem>().Play();
+            Camera.main.GetComponent<CameraShakeComponent>().AddSmallShake();
         }
 	}
 }
