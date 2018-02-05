@@ -11,6 +11,10 @@ public class MissileComponent : MonoBehaviour {
 
     public Vector3 velocity;
 
+    public GameObject particles;
+
+    public float destroyDistance;
+
     enum State {
         drifting,
         firing,
@@ -18,6 +22,7 @@ public class MissileComponent : MonoBehaviour {
 
     private GameObject player;
     private Vector3 playerVector;
+    private Vector3 startPosition;
 
     private State state;
     private Timer driftTimer;
@@ -32,6 +37,7 @@ public class MissileComponent : MonoBehaviour {
         fireTimer = new Timer(fireTime);
 
         velocity = new Vector3(-Random.value / 2.0f, 0.0f, Random.value - 0.5f).normalized * driftSpeed;
+        startPosition = transform.position;
     }
 
     void Update(){
@@ -39,11 +45,17 @@ public class MissileComponent : MonoBehaviour {
             state = State.firing;
             fireTimer.Start();
             playerVector = (player.transform.position - transform.position).normalized;
+            transform.rotation = Quaternion.LookRotation(playerVector);
+            particles.GetComponent<ParticleSystem>().Play();
         }
         else if(state == State.firing){
             velocity = playerVector * fireSpeed * fireTimer.Parameterized();
         }
 
         transform.position += velocity * Time.deltaTime;
+
+        if((transform.position - startPosition).magnitude > destroyDistance){
+            Destroy(gameObject);
+        }
     }
 }
