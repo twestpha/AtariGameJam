@@ -23,6 +23,11 @@ public class DamageableComponent : MonoBehaviour {
     void OnTriggerEnter(Collider other){
         if(other.gameObject.layer == DamagingComponent.DAMAGING_LAYER){
             DamagingComponent damaging = other.gameObject.GetComponent<DamagingComponent>();
+
+            if(damaging && damaging.creator == gameObject){
+                return;
+            }
+
             currentHealth -= damaging.damage;
 
             if(collisionEffectPrefab){

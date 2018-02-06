@@ -11,6 +11,8 @@ public class DamagingComponent : MonoBehaviour {
     public float damage;
     public bool destroyOnDamageDone;
 
+    public GameObject creator;
+
 	void Start(){
         if(gameObject.layer != DAMAGING_LAYER){
             Debug.LogWarning("Damaging Component requires to be layer " + DAMAGING_LAYER + ", but currently is " + gameObject.layer);

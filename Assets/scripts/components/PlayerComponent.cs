@@ -50,10 +50,11 @@ public class PlayerComponent : MonoBehaviour {
         wing1.transform.localRotation = Quaternion.Euler(-90.0f + 20.0f * Mathf.Sin(60.0f * Time.time), 0.0f, -180.0f);
         wing2.transform.localRotation = Quaternion.Euler(-90.0f + -20.0f * Mathf.Sin(60.0f * Time.time), 0.0f, -180.0f);
 
-        if(Input.GetMouseButtonDown(0)){
+        if(Input.GetMouseButtonDown(0) && !Input.GetMouseButton(1)){
             GameObject bullet = Object.Instantiate(bulletPrefab);
             bullet.transform.position = transform.position;
             bullet.GetComponent<ProjectileComponent>().damage = damage;
+            bullet.GetComponent<DamagingComponent>().creator = gameObject;
             particle.GetComponent<ParticleSystem>().Play();
             Camera.main.GetComponent<CameraShakeComponent>().AddSmallShake();
         }
