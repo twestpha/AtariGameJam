@@ -44,7 +44,10 @@ public class MissileComponent : MonoBehaviour {
         if(state == State.drifting && driftTimer.Finished()){
             state = State.firing;
             fireTimer.Start();
-            playerVector = (player.transform.position - transform.position).normalized;
+            playerVector = player.transform.position - transform.position;
+            playerVector.y = 0.0f;
+            playerVector.Normalize();
+
             transform.rotation = Quaternion.LookRotation(playerVector);
             particles.GetComponent<ParticleSystem>().Play();
         }

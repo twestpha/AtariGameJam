@@ -37,10 +37,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4662829891102292}
   - component: {fileID: 33550877540349494}
-  - component: {fileID: 135208829682289176}
   - component: {fileID: 23295337036877004}
   - component: {fileID: 114416111692333974}
-  m_Layer: 0
+  - component: {fileID: 54186265235620642}
+  - component: {fileID: 65291476799602024}
+  - component: {fileID: 114331506912814292}
+  m_Layer: 8
   m_Name: Missile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1680163666215370}
   m_LocalRotation: {x: -0, y: -0.70710677, z: -0, w: 0.7071069}
-  m_LocalPosition: {x: 18.34, y: 0, z: -0.04}
+  m_LocalPosition: {x: 22.01, y: 0, z: -0.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4659436577911300}
@@ -115,6 +117,46 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1680163666215370}
   m_Mesh: {fileID: 4300000, guid: c2bea21807a3a214e91fde6624edc3ed, type: 3}
+--- !u!54 &54186265235620642
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1680163666215370}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 1
+--- !u!65 &65291476799602024
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1680163666215370}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.7873164, y: 1.787316, z: 3.2214987}
+  m_Center: {x: 0, y: 0, z: 0.21074907}
+--- !u!114 &114331506912814292
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1680163666215370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7131fcd11b9b1e54885957de3942e114, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 50
+  destroyOnDamageDone: 1
 --- !u!114 &114416111692333974
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -133,18 +175,6 @@ MonoBehaviour:
   velocity: {x: 0, y: 0, z: 0}
   particles: {fileID: 1207974010624998}
   destroyDistance: 100
---- !u!135 &135208829682289176
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1680163666215370}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!198 &198388481008261100
 ParticleSystem:
   m_ObjectHideFlags: 1
