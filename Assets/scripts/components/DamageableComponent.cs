@@ -7,6 +7,8 @@ public class DamageableComponent : MonoBehaviour {
 
     public float currentHealth;
 
+    public GameObject collisionEffectPrefab;
+
 	void Start(){
         if(!GetComponent<Collider>().isTrigger){
             GetComponent<Collider>().isTrigger = true;
@@ -22,6 +24,11 @@ public class DamageableComponent : MonoBehaviour {
         if(other.gameObject.layer == DamagingComponent.DAMAGING_LAYER){
             DamagingComponent damaging = other.gameObject.GetComponent<DamagingComponent>();
             currentHealth -= damaging.damage;
+
+            if(collisionEffectPrefab){
+                GameObject collfx = Object.Instantiate(collisionEffectPrefab);
+                collfx.transform.position = (other.transform.position - transform.position) * 0.5f + transform.position;
+            }
 
             if(damaging.destroyOnDamageDone){
                 Destroy(other.gameObject);

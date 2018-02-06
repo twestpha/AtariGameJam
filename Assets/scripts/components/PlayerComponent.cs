@@ -17,6 +17,8 @@ public class PlayerComponent : MonoBehaviour {
 
     public GameObject bulletPrefab;
 
+    public GameObject overshield;
+
 	void Start(){
         Cursor.visible = false;
 
@@ -54,6 +56,12 @@ public class PlayerComponent : MonoBehaviour {
             bullet.GetComponent<ProjectileComponent>().damage = damage;
             particle.GetComponent<ParticleSystem>().Play();
             Camera.main.GetComponent<CameraShakeComponent>().AddSmallShake();
+        }
+
+        if(Input.GetMouseButtonDown(1)){
+            overshield.GetComponent<Renderer>().enabled = true;
+        } else if(Input.GetMouseButtonUp(1)){
+            overshield.GetComponent<Renderer>().enabled = false;
         }
 	}
 }
