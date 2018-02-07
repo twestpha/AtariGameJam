@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupAmount: 10
-  shrinkRate: 3
+  shrinkRate: 8
 --- !u!135 &135017699154337848
 SphereCollider:
   m_ObjectHideFlags: 1
