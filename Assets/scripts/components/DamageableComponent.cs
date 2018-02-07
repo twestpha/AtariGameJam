@@ -6,6 +6,7 @@ using UnityEngine;
 public class DamageableComponent : MonoBehaviour {
 
     public float currentHealth;
+    public bool invincible;
 
     public GameObject collisionEffectPrefab;
 
@@ -28,15 +29,21 @@ public class DamageableComponent : MonoBehaviour {
                 return;
             }
 
-            currentHealth -= damaging.damage;
+            if(!invincible){
+                currentHealth -= damaging.damage;
 
-            if(collisionEffectPrefab){
-                GameObject collfx = Object.Instantiate(collisionEffectPrefab);
-                collfx.transform.position = (other.transform.position - transform.position) * 0.5f + transform.position;
-            }
+                if(gameObject.tag == "Player"){
+                    Camera.main.GetComponent<CameraShakeComponent>().AddMediumShake();
+                }
 
-            if(damaging.destroyOnDamageDone){
-                Destroy(other.gameObject);
+                if(damaging.destroyOnDamageDone){
+                    Destroy(other.gameObject);
+                }
+
+                if(collisionEffectPrefab){
+                    GameObject collfx = Object.Instantiate(collisionEffectPrefab);
+                    collfx.transform.position = (other.transform.position - transform.position) * 0.5f + transform.position;
+                }
             }
         }
     }
