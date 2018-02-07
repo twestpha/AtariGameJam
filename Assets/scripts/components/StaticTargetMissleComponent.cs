@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class StaticTargetMissleComponent : MonoBehaviour {
     public float speed;
+    public float secondsBeforeStarting;
     
     private Vector3 target;
     private bool isActive;
     private float minDestroyDistance = 0.05f;
+    private Timer startTimer;
+    
 
     public GameObject collisionEffectPrefab;
     
@@ -19,8 +22,13 @@ public class StaticTargetMissleComponent : MonoBehaviour {
         isActive = true;
     }
 
+    void Start() {
+        startTimer = new Timer(secondsBeforeStarting);
+        startTimer.Start();
+    }
+
     void Update() {
-        if (isActive) {
+        if (startTimer.Finished()) {
             Vector3 playerVector = target - transform.position;
             playerVector.y = 0.0f;
             playerVector.Normalize();
