@@ -5,7 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using UnityEngine.Assertions.Comparers;
 
-public class CircleInAttack : MonoBehaviour {
+public class CircleAttackComponent : MonoBehaviour {
 
 	public GameObject bulletPrefab;
 	public float startingRadius;
