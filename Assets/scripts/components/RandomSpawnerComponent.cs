@@ -12,7 +12,6 @@ public class RandomSpawnerComponent : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		spawnTimer = new Timer(secondsBetweenSpawns);
-		spawnTimer.Start();
 	}
 	
 	// Update is called once per frame

@@ -140,5 +140,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   secondsBeforeStarting: 1
+  acceleration: 1
   collisionEffectPrefab: {fileID: 1719812948747420, guid: 6a457c75dc0635d4fbf7588b253f32cf,
     type: 2}
