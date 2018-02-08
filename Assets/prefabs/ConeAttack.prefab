@@ -53,9 +53,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 1991019879566956, guid: ae365bfe000859943b02c0a55e14da1a,
     type: 2}
-  bulletsPerSecond: 100
-  minFireSpreadInDeg: 10
+  bulletsPerSecond: 150
+  minFireSpreadInDeg: 0
   maxFireSpreadInDeg: 60
-  fireOffsetAngle: 0
   damage: 50
   durationInSeconds: 3

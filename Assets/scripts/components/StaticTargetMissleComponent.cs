@@ -8,7 +8,6 @@ public class StaticTargetMissleComponent : MonoBehaviour {
     public float acceleration;
     
     private Vector3 target;
-    private bool isActive;
     private float minDestroyDistance = 0.35f;
     private Timer startTimer;
     
@@ -16,10 +15,6 @@ public class StaticTargetMissleComponent : MonoBehaviour {
     
     public void SetTarget(Vector3 target) {
         this.target = target;
-    }
-
-    public void Activate() {
-        isActive = true;
     }
 
     void Start() {

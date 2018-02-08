@@ -863,6 +863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 50
+  invincible: 0
   collisionEffectPrefab: {fileID: 1719812948747420, guid: 6a457c75dc0635d4fbf7588b253f32cf,
     type: 2}
 --- !u!114 &1598686444
@@ -877,10 +878,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   secondsBetweenSpawns: 5
+  secondsBeforeStart: 2
   attackPrefabs:
   - {fileID: 1527718168278666, guid: 5e865bd80d6deb54ca5f5ebd75e0207f, type: 2}
-  - {fileID: 1456809820759822, guid: 4a7b07a053badc94b8ab67633ff1371f, type: 2}
   - {fileID: 1386848612221516, guid: 7b1148b868073d5408cabf56fad84bfa, type: 2}
+  - {fileID: 1456809820759822, guid: 4a7b07a053badc94b8ab67633ff1371f, type: 2}
 --- !u!1 &2124435644
 GameObject:
   m_ObjectHideFlags: 0
