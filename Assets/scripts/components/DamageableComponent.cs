@@ -7,8 +7,11 @@ public class DamageableComponent : MonoBehaviour {
 
     public float currentHealth;
     public bool invincible;
+    public bool destroySelfOnDeath;
 
     public GameObject collisionEffectPrefab;
+
+    public DamagingComponent.Team team;
 
 	void Start(){
         if(!GetComponent<Collider>().isTrigger){
@@ -25,7 +28,7 @@ public class DamageableComponent : MonoBehaviour {
         if(other.gameObject.layer == DamagingComponent.DAMAGING_LAYER){
             DamagingComponent damaging = other.gameObject.GetComponent<DamagingComponent>();
 
-            if(damaging && damaging.creator == gameObject){
+            if(damaging && damaging.creator == gameObject || team == damaging.team){
                 return;
             }
 
@@ -44,6 +47,10 @@ public class DamageableComponent : MonoBehaviour {
             if(collisionEffectPrefab){
                 GameObject collfx = Object.Instantiate(collisionEffectPrefab);
                 collfx.transform.position = (other.transform.position - transform.position) * 0.5f + transform.position;
+            }
+
+            if(destroySelfOnDeath && currentHealth <= 0.0f){
+                Destroy(gameObject);
             }
         }
     }

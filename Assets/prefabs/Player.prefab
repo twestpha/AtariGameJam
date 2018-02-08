@@ -524,6 +524,7 @@ MonoBehaviour:
   invincible: 0
   collisionEffectPrefab: {fileID: 1719812948747420, guid: 6a457c75dc0635d4fbf7588b253f32cf,
     type: 2}
+  team: 0
 --- !u!114 &114633478077129666
 MonoBehaviour:
   m_ObjectHideFlags: 1

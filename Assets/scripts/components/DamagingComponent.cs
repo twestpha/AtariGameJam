@@ -13,6 +13,13 @@ public class DamagingComponent : MonoBehaviour {
 
     public GameObject creator;
 
+    public enum Team {
+        GoodGuys,
+        BadGuys,
+    };
+
+    public Team team;
+
 	void Start(){
         if(gameObject.layer != DAMAGING_LAYER){
             Debug.LogWarning("Damaging Component requires to be layer " + DAMAGING_LAYER + ", but currently is " + gameObject.layer);

@@ -158,6 +158,7 @@ MonoBehaviour:
   damage: 50
   destroyOnDamageDone: 1
   creator: {fileID: 0}
+  team: 1
 --- !u!114 &114416111692333974
 MonoBehaviour:
   m_ObjectHideFlags: 1
