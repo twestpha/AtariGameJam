@@ -11,7 +11,6 @@ public class StaticTargetMissleComponent : MonoBehaviour {
     private float minDestroyDistance = 0.05f;
     private Timer startTimer;
     
-
     public GameObject collisionEffectPrefab;
     
     public void SetTarget(Vector3 target) {

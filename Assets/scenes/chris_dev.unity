@@ -796,98 +796,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4523932736012484, guid: 140992b00905461449e127a2a346cf2f,
     type: 2}
   m_PrefabInternal: {fileID: 780612079}
---- !u!1 &909200974
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 909200976}
-  - component: {fileID: 909200975}
-  m_Layer: 0
-  m_Name: ConeAttack
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &909200975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 909200974}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d92f45827a2459f4bb4e468d34a6c260, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 1991019879566956, guid: ae365bfe000859943b02c0a55e14da1a,
-    type: 2}
-  bulletsPerSecond: 100
-  minFireSpreadInDeg: 10
-  maxFireSpreadInDeg: 60
-  fireOffsetAngle: 0
-  damage: 50
-  durationInSeconds: 4
---- !u!4 &909200976
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 909200974}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.86, y: -0.47616452, z: -0.18661904}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &979282050
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 979282052}
-  - component: {fileID: 979282051}
-  m_Layer: 0
-  m_Name: CircleInAttack
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &979282051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 979282050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0de364092e55e674295d8d7bc9572cf5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 1238378252256032, guid: dfbe965ce69301f4d888644e459db612,
-    type: 2}
-  startingRadius: 15
-  numberOfBullets: 10
---- !u!4 &979282052
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 979282050}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.5617886, y: -0.47616452, z: -0.18661904}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1447663174
 Prefab:
   m_ObjectHideFlags: 0
@@ -1025,6 +933,7 @@ GameObject:
   - component: {fileID: 1598686439}
   - component: {fileID: 1598686442}
   - component: {fileID: 1598686443}
+  - component: {fileID: 1598686444}
   m_Layer: 0
   m_Name: qotile
   m_TagString: Enemy
@@ -1115,6 +1024,21 @@ MonoBehaviour:
   currentHealth: 50
   collisionEffectPrefab: {fileID: 1719812948747420, guid: 6a457c75dc0635d4fbf7588b253f32cf,
     type: 2}
+--- !u!114 &1598686444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1598686438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6278d7ade9a88d4eb3d0eb3eec64f19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  secondsBetweenSpawns: 5
+  attackPrefabs:
+  - {fileID: 1527718168278666, guid: 5e865bd80d6deb54ca5f5ebd75e0207f, type: 2}
+  - {fileID: 1456809820759822, guid: 4a7b07a053badc94b8ab67633ff1371f, type: 2}
 --- !u!1001 &2074113083
 Prefab:
   m_ObjectHideFlags: 0
