@@ -6,7 +6,8 @@ public class PlayerComponent : MonoBehaviour {
 
     private Plane plane;
 
-    public float damage;
+    public float shields;
+    public float shieldsDrainRate;
 
     public GameObject offset;
 
@@ -53,15 +54,19 @@ public class PlayerComponent : MonoBehaviour {
         if(Input.GetMouseButtonDown(0) && !Input.GetMouseButton(1)){
             GameObject bullet = Object.Instantiate(bulletPrefab);
             bullet.transform.position = transform.position;
-            bullet.GetComponent<ProjectileComponent>().damage = damage;
             bullet.GetComponent<DamagingComponent>().creator = gameObject;
             particle.GetComponent<ParticleSystem>().Play();
             Camera.main.GetComponent<CameraShakeComponent>().AddSmallShake();
         }
 
-        if(Input.GetMouseButtonDown(1)){
+        if(Input.GetMouseButton(1) && shields > 0.0f){
             overshield.GetComponent<Renderer>().enabled = true;
-        } else if(Input.GetMouseButtonUp(1)){
+            GetComponent<DamageableComponent>().invincible = true;
+
+            shields -= shieldsDrainRate * Time.deltaTime;
+            shields = Mathf.Max(shields, 0.0f);
+        } else {
+            GetComponent<DamageableComponent>().invincible = false;
             overshield.GetComponent<Renderer>().enabled = false;
         }
 	}
