@@ -11,6 +11,6 @@ public class ScrollingMaterialComponent : MonoBehaviour {
 	}
 
 	void Update(){
-        rend.material.SetTextureOffset("_MainTex", new Vector2(Mathf.Sin(Time.time * 0.35f), Mathf.Cos(Time.time * 0.3f)));
+        rend.material.SetTextureOffset("_MainTex", new Vector2(Mathf.Sin(Time.time), Mathf.Cos(Time.time * 1.3f)));
 	}
 }
