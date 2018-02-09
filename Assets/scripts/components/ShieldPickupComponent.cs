@@ -23,6 +23,7 @@ public class ShieldPickupComponent : MonoBehaviour {
     void OnTriggerEnter(Collider other){
         if(other.gameObject.tag == "Player"){
             other.gameObject.GetComponent<PlayerComponent>().shields += pickupAmount;
+            other.gameObject.GetComponent<PlayerComponent>().PlayShieldPickupSound();
             Destroy(gameObject);
         }
     }

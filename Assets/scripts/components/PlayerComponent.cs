@@ -20,6 +20,9 @@ public class PlayerComponent : MonoBehaviour {
 
     public GameObject overshield;
 
+    public AudioSource shotAudioSource;
+    public AudioSource shieldPickupAudioSource;
+
 	void Start(){
         Cursor.visible = false;
 
@@ -56,6 +59,7 @@ public class PlayerComponent : MonoBehaviour {
             bullet.transform.position = transform.position;
             bullet.GetComponent<DamagingComponent>().creator = gameObject;
             particle.GetComponent<ParticleSystem>().Play();
+            shotAudioSource.Play();
             Camera.main.GetComponent<CameraShakeComponent>().AddSmallShake();
         }
 
@@ -70,4 +74,8 @@ public class PlayerComponent : MonoBehaviour {
             overshield.GetComponent<Renderer>().enabled = false;
         }
 	}
+
+    public void PlayShieldPickupSound(){
+        shieldPickupAudioSource.Play();
+    }
 }

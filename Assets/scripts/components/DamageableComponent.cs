@@ -9,6 +9,8 @@ public class DamageableComponent : MonoBehaviour {
     public bool invincible;
     public bool destroySelfOnDeath;
 
+    public AudioSource damageableAudioSource;
+
     public GameObject collisionEffectPrefab;
 
     public DamagingComponent.Team team;
@@ -34,6 +36,10 @@ public class DamageableComponent : MonoBehaviour {
 
             if(!invincible){
                 currentHealth -= damaging.damage;
+
+                if(damageableAudioSource && !damageableAudioSource.isPlaying){
+                    damageableAudioSource.Play();
+                }
 
                 if(gameObject.tag == "Player"){
                     Camera.main.GetComponent<CameraShakeComponent>().AddMediumShake();

@@ -38,7 +38,7 @@ Transform:
   m_GameObject: {fileID: 1443217319292900}
   m_LocalRotation: {x: -0.70710707, y: -0, z: -0, w: 0.70710653}
   m_LocalPosition: {x: -8, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8451522, y: 0.8451523, z: 0.8451523}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -95,9 +95,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9c587c4c3e92d64c89c9926d36e1ef9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 1
+  currentHealth: 15
   invincible: 0
   destroySelfOnDeath: 1
+  damageableAudioSource: {fileID: 0}
   collisionEffectPrefab: {fileID: 1719812948747420, guid: 6a457c75dc0635d4fbf7588b253f32cf,
     type: 2}
   team: 1
@@ -108,7 +109,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1443217319292900}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
