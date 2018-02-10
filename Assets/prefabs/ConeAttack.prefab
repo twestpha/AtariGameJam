@@ -57,4 +57,4 @@ MonoBehaviour:
   minFireSpreadInDeg: 0
   maxFireSpreadInDeg: 60
   damage: 50
-  durationInSeconds: 3
+  durationInSeconds: 2

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class LaserRotatorComponent : MonoBehaviour {
 
+    public float spinUpTime;
+    public float spinDownTime;
+    
     private Timer spinUpTimer;
     private Timer spinDownTimer;
 
@@ -14,8 +17,8 @@ public class LaserRotatorComponent : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        spinDownTimer = new Timer(2.5f);
-        spinUpTimer = new Timer(2.5f);
+        spinDownTimer = new Timer(spinDownTime);
+        spinUpTimer = new Timer(spinUpTime);
         spinUpTimer.Start();
         up = true;
 	}

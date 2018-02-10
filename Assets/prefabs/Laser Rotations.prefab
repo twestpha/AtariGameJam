@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 23247280830128506}
   - component: {fileID: 54406170981935098}
   - component: {fileID: 114183122070499088}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Capsule (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 23167589004812356}
   - component: {fileID: 54795878053311040}
   - component: {fileID: 114577451792558606}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,7 +203,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!54 &54795878053311040
@@ -218,7 +218,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &114183122070499088
@@ -232,7 +232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7131fcd11b9b1e54885957de3942e114, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
+  damage: 30
   destroyOnDamageDone: 0
   creator: {fileID: 0}
   team: 1
@@ -247,6 +247,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6100b973b249df343a60e85eba1ecfe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spinUpTime: 1
+  spinDownTime: 1
   up: 0
   a: {fileID: 1949072013808948}
   b: {fileID: 1710052746825442}
@@ -261,7 +263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7131fcd11b9b1e54885957de3942e114, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
+  damage: 30
   destroyOnDamageDone: 0
   creator: {fileID: 0}
   team: 1
@@ -284,7 +286,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1949072013808948}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -297,7 +299,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1710052746825442}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2

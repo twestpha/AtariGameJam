@@ -291,6 +291,7 @@ MonoBehaviour:
   winDamageTakenScoreText: {fileID: 912222630}
   winTimeBonusScoreText: {fileID: 1879658666}
   winFinalScoreText: {fileID: 10401537}
+  minEnemyAttackSpawnTime: 3
   slowdownTime: 1.5
 --- !u!4 &31648797
 Transform:
@@ -7503,7 +7504,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -640222905
+  randomSeed: -1464080897
   InitialModule:
     serializedVersion: 3
     enabled: 1
