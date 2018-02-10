@@ -10,23 +10,39 @@ public class TitleScreenComponent : MonoBehaviour {
     private Timer transitionTimer;
 
     public GameObject blockingPlane;
+    public GameObject title;
     public GameObject uiCanvas;
+
+    public GameObject spawner;
+
+    private bool started = false;
 
     void Start(){
         Time.timeScale = 1.0f;
         transitionTimer = new Timer(transitionTime);
 
-        // temp
-        transitionTimer.Start();
         uiCanvas.SetActive(false);
     }
 
     void Update(){
-        tPlayerDriver = transitionTimer.Parameterized();
 
-        if(tPlayerDriver > 0.5f){
-            blockingPlane.GetComponent<Renderer>().enabled = false;
-            uiCanvas.SetActive(true);
+        if(!started && Input.GetMouseButtonDown(0)) {
+            transitionTimer.Start();
+            started = true;
+        }
+
+        if(started){
+            tPlayerDriver = transitionTimer.Parameterized();
+
+            if(tPlayerDriver > 0.5f){
+                blockingPlane.GetComponent<Renderer>().enabled = false;
+                title.GetComponent<Renderer>().enabled = false;
+                uiCanvas.SetActive(true);
+            }
+
+            if(tPlayerDriver > 0.9f){
+                spawner.GetComponent<RandomSpawnerComponent>().StartSpawning();
+            }
         }
     }
 }
