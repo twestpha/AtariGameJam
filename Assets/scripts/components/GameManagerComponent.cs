@@ -118,8 +118,7 @@ public class GameManagerComponent : MonoBehaviour {
 			timeBonus = 250.0f;
 		} else if (totalTime < 120.0f) {
 			timeBonus = 150.0f;
-		}
-		else {
+		} else {
 			timeBonus = 50.0f;
 		}
 		return timeBonus;
