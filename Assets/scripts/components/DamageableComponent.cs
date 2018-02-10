@@ -6,6 +6,7 @@ using UnityEngine;
 public class DamageableComponent : MonoBehaviour {
 
     public float currentHealth;
+    public float maxHealth;
     public bool invincible;
     public bool destroySelfOnDeath;
 
@@ -59,5 +60,9 @@ public class DamageableComponent : MonoBehaviour {
                 Destroy(gameObject);
             }
         }
+    }
+
+    public float getMaxHealth() {
+        return maxHealth;
     }
 }
