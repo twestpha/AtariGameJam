@@ -15,6 +15,8 @@ public class GameManagerComponent : MonoBehaviour {
 
 	public Text scoreText;
 
+	public Text loseBaseScoreText;
+	public Text loseDamageTakenScoreText;
 	public Text loseScoreText;
 
 	public Text winBaseScoreText;
@@ -32,7 +34,7 @@ public class GameManagerComponent : MonoBehaviour {
     private float prevenemyhealth;
 
 	private Timer gameTimer;
-	private bool alreadyCalculatedScoreBonus;
+	private bool calculatedFinalScore;
 	private bool won;
 	
 	// Use this for initialization
@@ -68,16 +70,17 @@ public class GameManagerComponent : MonoBehaviour {
         }
 
 		if(playerhealth <= 0.0f && !won) {
-			loseScoreText.text = "FINAL SCORE: " + calculateScore();
-			scoreText.enabled = false;
-			loseUI.SetActive(true);
+			if (!calculatedFinalScore) {
+				calculatedFinalScore = true;
+				setupLoseUI();				
+			}
 			Time.timeScale = 1.05f - slowdownTimer.Parameterized();
 		}
 
 		if(enemyhealth <= 0.0f) {
 			won = true;
-			if (!alreadyCalculatedScoreBonus) {
-				alreadyCalculatedScoreBonus = true;
+			if (!calculatedFinalScore) {
+				calculatedFinalScore = true;
 				setupWinUI();
 			}
 			Time.timeScale = 1.05f - slowdownTimer.Parameterized();
@@ -98,7 +101,7 @@ public class GameManagerComponent : MonoBehaviour {
 		DamageableComponent enemyDamageable = enemy.GetComponent<DamageableComponent>();
 		
 		float baseScore = enemyDamageable.maxHealth - enemyDamageable.currentHealth;
-		return baseScore + (player.GetComponent<PlayerComponent>().GetNumberOfShieldsPickedUp() * 50.0f);
+		return baseScore + (player.GetComponent<PlayerComponent>().GetNumberOfShieldsPickedUp() * 25.0f);
 	}
 
 	float getPlayerDamageTaken() {
@@ -122,6 +125,17 @@ public class GameManagerComponent : MonoBehaviour {
 		return timeBonus;
 	}
 
+	void setupLoseUI() {
+		float baseScore = calculateScore();
+		float damageTaken = getPlayerDamageTaken();
+		float finalScore = Mathf.Max(baseScore - damageTaken, 0);
+		loseBaseScoreText.text        = "BASE SCORE:            " + baseScore;
+		loseDamageTakenScoreText.text = "DAMAGE TAKEN PENALTY: -" + damageTaken;
+		loseScoreText.text            = "FINAL SCORE:           " + finalScore;
+		scoreText.enabled = false;
+		loseUI.SetActive(true);
+	}
+	
 	void setupWinUI() {
 		scoreText.enabled = false;
 		
@@ -138,5 +152,6 @@ public class GameManagerComponent : MonoBehaviour {
 		winUI.SetActive(true);
 
 	}
+
 	
 }

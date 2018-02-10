@@ -8,7 +8,7 @@ public class StaticTargetMissleComponent : MonoBehaviour {
     public float acceleration;
     
     private Vector3 target;
-    private float minDestroyDistance = 0.5f;
+    private float minDestroyDistance = 1.0f;
     private Timer startTimer;
     
     public GameObject collisionEffectPrefab;
