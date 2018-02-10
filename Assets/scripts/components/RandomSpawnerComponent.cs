@@ -29,6 +29,7 @@ public class RandomSpawnerComponent : MonoBehaviour {
 			GameObject toSpawn = attackPrefabs[Random.Range(0, attackPrefabs.Length)];
 			Instantiate(toSpawn, Vector3.zero, Quaternion.identity);
 
+			spawnTimer = new Timer(secondsBetweenSpawns);
 			spawnTimer.Start();
 		}
 	}

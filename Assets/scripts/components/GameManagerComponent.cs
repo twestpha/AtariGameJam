@@ -25,6 +25,8 @@ public class GameManagerComponent : MonoBehaviour {
 	public Text winTimeBonusScoreText;
 	public Text winFinalScoreText;
 
+	public float minEnemyAttackSpawnTime;
+	
     public float slowdownTime;
     private Timer slowdownTimer;
 
@@ -39,6 +41,7 @@ public class GameManagerComponent : MonoBehaviour {
 	private bool won;
 
 	private bool startedGameTimer;
+	private float startingEnemyAttackSpawnTime;
 	
 	// Use this for initialization
 	void Start () {
@@ -49,6 +52,8 @@ public class GameManagerComponent : MonoBehaviour {
         restartTimer = new Timer(1.6f);
 		
 		gameTimer = new Timer();
+
+		startingEnemyAttackSpawnTime = enemy.GetComponent<RandomSpawnerComponent>().secondsBetweenSpawns;
 	}
 
 	public void StartGameTimer() {
@@ -63,6 +68,8 @@ public class GameManagerComponent : MonoBehaviour {
 		scoreText.text = "SCORE: " + (int)calculateScore();
 		timeText.text = "TIME:  " + gameTimer.Elapsed().ToString("F2");
 
+		enemy.GetComponent<RandomSpawnerComponent>().secondsBetweenSpawns = calculateBossAttackSpawnTime();
+		
         float enemyhealth = enemy.GetComponent<DamageableComponent>().currentHealth;
         float playerhealth = player.GetComponent<DamageableComponent>().currentHealth;
 
@@ -104,6 +111,16 @@ public class GameManagerComponent : MonoBehaviour {
 	        Time.timeScale = 1.0f;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+		
+	}
+
+	float calculateBossAttackSpawnTime() {
+		if (startedGameTimer) {			
+			float t = Mathf.Min(1, gameTimer.Elapsed() / 60.0f);
+			return Mathf.Lerp(startingEnemyAttackSpawnTime, minEnemyAttackSpawnTime, t);
+		} else {
+			return startingEnemyAttackSpawnTime;
+		}
 		
 	}
 
