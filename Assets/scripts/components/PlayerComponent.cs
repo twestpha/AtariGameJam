@@ -28,6 +28,7 @@ public class PlayerComponent : MonoBehaviour {
 
     public AudioSource shotAudioSource;
     public AudioSource shieldPickupAudioSource;
+    public AudioSource shieldAudioSource;
 
     private float prevhealth;
     private int numberOfShieldsPickedUp;
@@ -98,6 +99,10 @@ public class PlayerComponent : MonoBehaviour {
             overshield.GetComponent<Renderer>().enabled = true;
             GetComponent<DamageableComponent>().invincible = true;
 
+            if(!shieldAudioSource.isPlaying){
+                shieldAudioSource.Play();
+            }
+
             shields -= shieldsDrainRate * Time.deltaTime;
             shields = Mathf.Max(shields, 0.0f);
         } else {
@@ -120,7 +125,7 @@ public class PlayerComponent : MonoBehaviour {
         numberOfShieldsPickedUp++;
         PlayShieldPickupSound();
     }
-    
+
     public int GetNumberOfShieldsPickedUp() {
         return numberOfShieldsPickedUp;
     }
