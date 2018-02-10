@@ -26,7 +26,11 @@ public class GameManagerComponent : MonoBehaviour {
 		loseUI.SetActive(false);
 
         slowdownTimer = new Timer(slowdownTime);
+<<<<<<< HEAD
         restartTimer = new Timer(1.6f);
+=======
+        restartTimer = new Timer(1.5f);
+>>>>>>> fd2b786cc9621fc446cef7c3f9f5f1ee8cb3ba7e
 	}
 
 	// Update is called once per frame
@@ -61,6 +65,8 @@ public class GameManagerComponent : MonoBehaviour {
         prevplayerhealth = playerhealth;
 
         if(restartTimer.Finished() && playerDied){
+	        Debug.Log("Realoding scene");
+	        Time.timeScale = 1.0f;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 	}
