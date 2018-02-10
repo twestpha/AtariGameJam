@@ -10,12 +10,14 @@ public class TitleScreenComponent : MonoBehaviour {
     private Timer transitionTimer;
 
     public GameObject blockingPlane;
+    public GameObject uiCanvas;
 
     void Start(){
         transitionTimer = new Timer(transitionTime);
 
         // temp
         transitionTimer.Start();
+        uiCanvas.SetActive(false);
     }
 
     void Update(){
@@ -23,6 +25,7 @@ public class TitleScreenComponent : MonoBehaviour {
 
         if(tPlayerDriver > 0.5f){
             blockingPlane.GetComponent<Renderer>().enabled = false;
+            uiCanvas.SetActive(true);
         }
     }
 }

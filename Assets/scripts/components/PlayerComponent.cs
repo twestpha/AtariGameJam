@@ -7,6 +7,7 @@ public class PlayerComponent : MonoBehaviour {
     private Plane plane;
 
     public float shields;
+    public float maxShields;
     public float shieldsDrainRate;
 
     public GameObject offset;
