@@ -14,6 +14,7 @@ public class GameManagerComponent : MonoBehaviour {
 	public GameObject loseUI;
 
 	public Text scoreText;
+	public Text timeText;
 
 	public Text loseBaseScoreText;
 	public Text loseDamageTakenScoreText;
@@ -36,6 +37,8 @@ public class GameManagerComponent : MonoBehaviour {
 	private Timer gameTimer;
 	private bool calculatedFinalScore;
 	private bool won;
+
+	private bool startedGameTimer;
 	
 	// Use this for initialization
 	void Start () {
@@ -46,12 +49,19 @@ public class GameManagerComponent : MonoBehaviour {
         restartTimer = new Timer(1.6f);
 		
 		gameTimer = new Timer();
-		gameTimer.Start();
 	}
 
+	public void StartGameTimer() {
+		if (!startedGameTimer) {
+			gameTimer.Start();
+			startedGameTimer = true;
+		}
+	}
+	
 	// Update is called once per frame
 	void Update () {
 		scoreText.text = "SCORE: " + (int)calculateScore();
+		timeText.text = "TIME:  " + gameTimer.Elapsed().ToString("F2");
 
         float enemyhealth = enemy.GetComponent<DamageableComponent>().currentHealth;
         float playerhealth = player.GetComponent<DamageableComponent>().currentHealth;

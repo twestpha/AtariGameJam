@@ -283,6 +283,7 @@ MonoBehaviour:
   winUI: {fileID: 505860198}
   loseUI: {fileID: 1551150788}
   scoreText: {fileID: 575324272}
+  timeText: {fileID: 162954396}
   loseBaseScoreText: {fileID: 811924135}
   loseDamageTakenScoreText: {fileID: 1954877624}
   loseScoreText: {fileID: 2136642312}
@@ -628,6 +629,80 @@ GameObject:
   m_PrefabParentObject: {fileID: 1393553592386970, guid: b672d3a511550414886124e3a4c98b42,
     type: 2}
   m_PrefabInternal: {fileID: 751091184}
+--- !u!1 &162954394
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 162954395}
+  - component: {fileID: 162954397}
+  - component: {fileID: 162954396}
+  m_Layer: 5
+  m_Name: Time
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &162954395
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 162954394}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.000093744704}
+  m_LocalScale: {x: 1.0001867, y: 1.0001867, z: 1.0001867}
+  m_Children: []
+  m_Father: {fileID: 1611629742}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 100, y: -45}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &162954396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 162954394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.74264705, g: 0.74264705, b: 0.74264705, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 640923348a7542d4f9b1c5fb242be4ab, type: 3}
+    m_FontSize: 25
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: 'TIME: '
+--- !u!222 &162954397
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 162954394}
 --- !u!1001 &168407970
 Prefab:
   m_ObjectHideFlags: 0
@@ -1001,6 +1076,7 @@ MonoBehaviour:
   blockingPlane: {fileID: 1436671632}
   title: {fileID: 1486397125}
   uiCanvas: {fileID: 1611629738}
+  gameManager: {fileID: 31648796}
   spawner: {fileID: 1219584990}
 --- !u!4 &231310183
 Transform:
@@ -5852,6 +5928,7 @@ RectTransform:
   - {fileID: 1551150789}
   - {fileID: 505860199}
   - {fileID: 575324274}
+  - {fileID: 162954395}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
