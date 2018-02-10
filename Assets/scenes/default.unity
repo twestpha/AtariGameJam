@@ -291,6 +291,7 @@ MonoBehaviour:
   winDamageTakenScoreText: {fileID: 912222630}
   winTimeBonusScoreText: {fileID: 1879658666}
   winFinalScoreText: {fileID: 10401537}
+  minEnemyAttackSpawnTime: 3
   slowdownTime: 1.5
 --- !u!4 &31648797
 Transform:
@@ -7503,7 +7504,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1426016745
+  randomSeed: -1464080897
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -10997,28 +10998,6 @@ Prefab:
     - target: {fileID: 4750858764871714, guid: d5d51176f49905c498056b059704e23e, type: 2}
       propertyPath: m_RootOrder
       value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 114180455808306240, guid: d5d51176f49905c498056b059704e23e,
-        type: 2}
-      propertyPath: maxHealth
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 114180455808306240, guid: d5d51176f49905c498056b059704e23e,
-        type: 2}
-      propertyPath: currentHealth
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 4750858764871714, guid: d5d51176f49905c498056b059704e23e, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.70000046
-      objectReference: {fileID: 0}
-    - target: {fileID: 4750858764871714, guid: d5d51176f49905c498056b059704e23e, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.70000046
-      objectReference: {fileID: 0}
-    - target: {fileID: 4750858764871714, guid: d5d51176f49905c498056b059704e23e, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.70000046
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d5d51176f49905c498056b059704e23e, type: 2}

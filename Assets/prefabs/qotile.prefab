@@ -226,6 +226,7 @@ MonoBehaviour:
   - {fileID: 1527718168278666, guid: 5e865bd80d6deb54ca5f5ebd75e0207f, type: 2}
   - {fileID: 1386848612221516, guid: 7b1148b868073d5408cabf56fad84bfa, type: 2}
   - {fileID: 1456809820759822, guid: 4a7b07a053badc94b8ab67633ff1371f, type: 2}
+  - {fileID: 1455249861405736, guid: a89bc0966646eea40aef6ec8fcb6e602, type: 2}
   started: 0
 --- !u!198 &198034996370268278
 ParticleSystem:

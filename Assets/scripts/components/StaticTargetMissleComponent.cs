@@ -24,7 +24,7 @@ public class StaticTargetMissleComponent : MonoBehaviour {
 
     void Start() {
         startTimer = new Timer(secondsBeforeStarting);
-        maxBullshitTimer = new Timer(1.5f);
+        maxBullshitTimer = new Timer(1.0f);
         startTimer.Start();
         maxBullshitTimer.Start();
     }
