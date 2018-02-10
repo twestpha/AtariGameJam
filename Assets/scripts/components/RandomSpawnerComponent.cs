@@ -22,8 +22,8 @@ public class RandomSpawnerComponent : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        Debug.Log("STARTTIMER " + startTimer.Elapsed());
-        Debug.Log("STARTTIMER " + startTimer.Parameterized());
+//        Debug.Log("STARTTIMER " + startTimer.Elapsed());
+//        Debug.Log("STARTTIMER " + startTimer.Parameterized());
 
 		if(started && spawnTimer.Finished()) {
 			GameObject toSpawn = attackPrefabs[Random.Range(0, attackPrefabs.Length)];

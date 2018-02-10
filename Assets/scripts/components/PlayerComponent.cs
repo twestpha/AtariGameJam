@@ -30,6 +30,7 @@ public class PlayerComponent : MonoBehaviour {
     public AudioSource shieldPickupAudioSource;
 
     private float prevhealth;
+    private int numberOfShieldsPickedUp;
 
     public GameObject jukebox;
 
@@ -109,5 +110,18 @@ public class PlayerComponent : MonoBehaviour {
 
     public void PlayShieldPickupSound(){
         shieldPickupAudioSource.Play();
+    }
+
+    public void PickupShield(float pickupAmount) {
+        shields += pickupAmount;
+        if (shields > maxShields) {
+            shields = maxShields;
+        }
+        numberOfShieldsPickedUp++;
+        PlayShieldPickupSound();
+    }
+    
+    public int GetNumberOfShieldsPickedUp() {
+        return numberOfShieldsPickedUp;
     }
 }
