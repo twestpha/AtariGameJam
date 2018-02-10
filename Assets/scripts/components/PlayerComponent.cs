@@ -29,6 +29,10 @@ public class PlayerComponent : MonoBehaviour {
     public AudioSource shotAudioSource;
     public AudioSource shieldPickupAudioSource;
 
+    private float prevhealth;
+
+    public GameObject jukebox;
+
 	void Start(){
         Cursor.visible = false;
 
@@ -38,6 +42,15 @@ public class PlayerComponent : MonoBehaviour {
 	}
 
 	void Update(){
+        if(prevhealth > 0.0f && GetComponent<DamageableComponent>().currentHealth <= 0.0f){
+            offset.transform.position = new Vector3(0.0f, 0.0f, 9000.0f);
+            jukebox.GetComponent<JukeboxComponent>().PlayerDied();
+        }
+
+        if(GetComponent<DamageableComponent>().currentHealth <= 0.0f){
+            return;
+        }
+
         Vector3 prevposition = transform.position;
 
         Ray ray;
@@ -90,6 +103,8 @@ public class PlayerComponent : MonoBehaviour {
             GetComponent<DamageableComponent>().invincible = false;
             overshield.GetComponent<Renderer>().enabled = false;
         }
+
+        prevhealth = GetComponent<DamageableComponent>().currentHealth;
 	}
 
     public void PlayShieldPickupSound(){

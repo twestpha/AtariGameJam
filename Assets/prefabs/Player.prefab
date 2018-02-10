@@ -229,14 +229,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1393553592386970}
-  m_LocalRotation: {x: 0.46301866, y: 0.5344286, z: 0.53442746, w: 0.4630196}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.00000058114523}
   m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4482871157773406}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -8.190001, y: 90.00001, z: 90.00001}
+  m_LocalEulerAnglesHint: {x: 0, y: 180.00002, z: 0}
 --- !u!4 &4689291906704254
 Transform:
   m_ObjectHideFlags: 1
@@ -763,7 +763,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9c587c4c3e92d64c89c9926d36e1ef9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 50
+  currentHealth: 500
+  maxHealth: 500
   invincible: 0
   destroySelfOnDeath: 0
   damageableAudioSource: {fileID: 82131751366718520}
@@ -792,7 +793,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 745a5af89ef1ffd4f8e715e5865c669c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shields: 50
+  shields: 100
+  maxShields: 100
   shieldsDrainRate: 25
   offset: {fileID: 1740361404733458}
   wing1: {fileID: 1154645341092844}
@@ -805,6 +807,7 @@ MonoBehaviour:
   titlePosition: {x: 0, y: 150, z: 0}
   shotAudioSource: {fileID: 82921601333274882}
   shieldPickupAudioSource: {fileID: 82896264483858574}
+  jukebox: {fileID: 0}
 --- !u!198 &198039645535915028
 ParticleSystem:
   m_ObjectHideFlags: 1

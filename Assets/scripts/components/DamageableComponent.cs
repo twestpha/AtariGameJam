@@ -38,11 +38,11 @@ public class DamageableComponent : MonoBehaviour {
             if(!invincible){
                 currentHealth -= damaging.damage;
 
-                if(damageableAudioSource && !damageableAudioSource.isPlaying){
+                if(damageableAudioSource && !damageableAudioSource.isPlaying && currentHealth > 0.0f){
                     damageableAudioSource.Play();
                 }
 
-                if(gameObject.tag == "Player"){
+                if(gameObject.tag == "Player" && currentHealth > 0.0f){
                     Camera.main.GetComponent<CameraShakeComponent>().AddMediumShake();
                 }
             }

@@ -8,10 +8,15 @@ public class JukeboxComponent : MonoBehaviour {
     private int tracknumber;
     AudioSource audioSource;
 
+    private bool playerDied;
+    private Timer pitchTimer;
+
 	void Start(){
         audioSource = GetComponent<AudioSource>();
         tracknumber = 0;
         Shuffle();
+        playerDied = false;
+        pitchTimer = new Timer(1.5f);
 	}
 
 	void Update(){
@@ -25,9 +30,13 @@ public class JukeboxComponent : MonoBehaviour {
             audioSource.Play();
             tracknumber++;
         }
+
+        if(playerDied){
+            audioSource.pitch = 1.05f - pitchTimer.Parameterized();
+        }
 	}
 
-    void Shuffle(){
+    private void Shuffle(){
         for(int i = 0; i < tracks.Length - 2; ++i){
             // get random value i <= j < remaining elements
             int j = (int)((Random.value * tracks.Length - i) + i);
@@ -41,5 +50,13 @@ public class JukeboxComponent : MonoBehaviour {
             tracks[i] = tracks[j];
             tracks[j] = temp;
         }
+    }
+
+    public void PlayerDied(){
+        if(playerDied){
+            return;
+        }
+        playerDied = true;
+        pitchTimer.Start();
     }
 }
