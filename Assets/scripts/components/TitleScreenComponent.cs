@@ -13,6 +13,7 @@ public class TitleScreenComponent : MonoBehaviour {
     public GameObject uiCanvas;
 
     void Start(){
+        Time.timeScale = 1.0f;
         transitionTimer = new Timer(transitionTime);
 
         // temp

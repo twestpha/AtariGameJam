@@ -26,7 +26,7 @@ public class GameManagerComponent : MonoBehaviour {
 		loseUI.SetActive(false);
 
         slowdownTimer = new Timer(slowdownTime);
-        restartTimer = new Timer(5.0f);
+        restartTimer = new Timer(1.6f);
 	}
 
 	// Update is called once per frame
