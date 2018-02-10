@@ -66,7 +66,9 @@ public class GameManagerComponent : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		scoreText.text = "SCORE: " + (int)calculateScore();
-		timeText.text = "TIME:  " + gameTimer.Elapsed().ToString("F2");
+		if (!calculatedFinalScore) {
+			timeText.text = "TIME:  " + gameTimer.Elapsed().ToString("F2");			
+		}
 
 		enemy.GetComponent<RandomSpawnerComponent>().secondsBetweenSpawns = calculateBossAttackSpawnTime();
 		
