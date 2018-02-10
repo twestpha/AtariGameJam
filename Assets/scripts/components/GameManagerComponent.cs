@@ -111,17 +111,15 @@ public class GameManagerComponent : MonoBehaviour {
 	
 	float calculateTimeBonus() {
 		float totalTime = gameTimer.Elapsed();
-		float timeBonus;
 		if (totalTime < 80.0f) {
-			timeBonus = 500.0f;
+			return 500.0f;
 		} else if (totalTime < 100.0f) {
-			timeBonus = 250.0f;
+			return 250.0f;
 		} else if (totalTime < 120.0f) {
-			timeBonus = 150.0f;
+			return 150.0f;
 		} else {
-			timeBonus = 50.0f;
+			return 50.0f;
 		}
-		return timeBonus;
 	}
 
 	void setupLoseUI() {
