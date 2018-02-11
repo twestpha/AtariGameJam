@@ -54,4 +54,4 @@ MonoBehaviour:
   projectilePrefab: {fileID: 1653101558809624, guid: d4e4eff4ce1da1447a939a3193fe185b,
     type: 2}
   numberOfWaves: 5
-  secondsBetweenWaves: 0.4
+  secondsBetweenWaves: 0.6
