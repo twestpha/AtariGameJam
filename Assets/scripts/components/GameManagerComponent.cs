@@ -26,7 +26,7 @@ public class GameManagerComponent : MonoBehaviour {
 	public Text winFinalScoreText;
 
 	public float minEnemyAttackSpawnTime;
-	
+
     public float slowdownTime;
     private Timer slowdownTimer;
 
@@ -42,7 +42,7 @@ public class GameManagerComponent : MonoBehaviour {
 
 	private bool startedGameTimer;
 	private float startingEnemyAttackSpawnTime;
-	
+
 	// Use this for initialization
 	void Start () {
 		winUI.SetActive(false);
@@ -50,7 +50,7 @@ public class GameManagerComponent : MonoBehaviour {
 
         slowdownTimer = new Timer(slowdownTime);
         restartTimer = new Timer(1.6f);
-		
+
 		gameTimer = new Timer();
 
 		startingEnemyAttackSpawnTime = enemy.GetComponent<RandomSpawnerComponent>().secondsBetweenSpawns;
@@ -62,16 +62,16 @@ public class GameManagerComponent : MonoBehaviour {
 			startedGameTimer = true;
 		}
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		scoreText.text = "SCORE: " + (int)calculateScore();
 		if (!calculatedFinalScore) {
-			timeText.text = "TIME:  " + gameTimer.Elapsed().ToString("F2");			
+			timeText.text = "TIME:  " + gameTimer.Elapsed().ToString("F2");
 		}
 
 		enemy.GetComponent<RandomSpawnerComponent>().secondsBetweenSpawns = calculateBossAttackSpawnTime();
-		
+
         float enemyhealth = enemy.GetComponent<DamageableComponent>().currentHealth;
         float playerhealth = player.GetComponent<DamageableComponent>().currentHealth;
 
@@ -91,7 +91,7 @@ public class GameManagerComponent : MonoBehaviour {
 		if(playerhealth <= 0.0f && !won) {
 			if (!calculatedFinalScore) {
 				calculatedFinalScore = true;
-				setupLoseUI();				
+				setupLoseUI();
 			}
 			Time.timeScale = 1.05f - slowdownTimer.Parameterized();
 		}
@@ -113,22 +113,22 @@ public class GameManagerComponent : MonoBehaviour {
 	        Time.timeScale = 1.0f;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
-		
+
 	}
 
 	float calculateBossAttackSpawnTime() {
-		if (startedGameTimer) {			
+		if (startedGameTimer) {
 			float t = Mathf.Min(1, gameTimer.Elapsed() / 60.0f);
 			return Mathf.Lerp(startingEnemyAttackSpawnTime, minEnemyAttackSpawnTime, t);
 		} else {
 			return startingEnemyAttackSpawnTime;
 		}
-		
+
 	}
 
 	float calculateScore() {
 		DamageableComponent enemyDamageable = enemy.GetComponent<DamageableComponent>();
-		
+
 		float baseScore = enemyDamageable.maxHealth - enemyDamageable.currentHealth;
 		return baseScore + (player.GetComponent<PlayerComponent>().GetNumberOfShieldsPickedUp() * 25.0f);
 	}
@@ -137,7 +137,7 @@ public class GameManagerComponent : MonoBehaviour {
 		DamageableComponent playerDamageable = player.GetComponent<DamageableComponent>();
 		return playerDamageable.maxHealth - playerDamageable.currentHealth;
 	}
-	
+
 	float calculateTimeBonus() {
 		float totalTime = gameTimer.Elapsed();
 		if (totalTime < 80.0f) {
@@ -161,10 +161,10 @@ public class GameManagerComponent : MonoBehaviour {
 		scoreText.enabled = false;
 		loseUI.SetActive(true);
 	}
-	
+
 	void setupWinUI() {
 		scoreText.enabled = false;
-		
+
 		float baseScore = calculateScore();
 		float damageTaken = getPlayerDamageTaken();
 		float timeBonus = calculateTimeBonus();
@@ -174,10 +174,10 @@ public class GameManagerComponent : MonoBehaviour {
 		winDamageTakenScoreText.text = "DAMAGE TAKEN PENALTY: -" + damageTaken;
 		winTimeBonusScoreText.text   = "TIME BONUS:           +" + timeBonus;
 		winFinalScoreText.text       = "FINAL SCORE:           " + finalScore;
-		
+
 		winUI.SetActive(true);
 
 	}
 
-	
+
 }
