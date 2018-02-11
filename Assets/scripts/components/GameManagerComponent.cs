@@ -142,8 +142,8 @@ public class GameManagerComponent : MonoBehaviour {
 		float totalTime = gameTimer.Elapsed();
 
 		if (totalTime <= 80f) {
-			float bonus = Mathf.Round(Mathf.Pow(1.2f, 80f - totalTime));
-			return 1000f * bonus;
+			float bonus = Mathf.Pow(1.2f, 80f - totalTime);
+			return Mathf.Round(1000f * bonus); 
 		} else if (totalTime <= 90f) {
 			float t = (90f - totalTime) / 10f;
 			return Mathf.Round(Mathf.Lerp(500f, 750f, t));
