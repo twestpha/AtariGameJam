@@ -39,10 +39,10 @@ public class TitleScreenComponent : MonoBehaviour {
                 blockingPlane.GetComponent<Renderer>().enabled = false;
                 title.GetComponent<Renderer>().enabled = false;
                 uiCanvas.SetActive(true);
-                gameManager.StartGameTimer();
             }
 
             if(tPlayerDriver > 0.9f){
+                gameManager.StartGameTimer();
                 spawner.GetComponent<RandomSpawnerComponent>().StartSpawning();
             }
         }

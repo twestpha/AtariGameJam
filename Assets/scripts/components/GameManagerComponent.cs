@@ -66,7 +66,7 @@ public class GameManagerComponent : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		scoreText.text = "SCORE: " + (int)calculateScore();
-		if (!calculatedFinalScore) {
+		if (!calculatedFinalScore && startedGameTimer) {
 			timeText.text = "TIME:  " + gameTimer.Elapsed().ToString("F2");
 		}
 
