@@ -45,7 +45,7 @@ public class WaveAttackComponent : MonoBehaviour {
 			if (i != skipIndex) {
 				GameObject projectile = Instantiate(
 					projectilePrefab, 
-					new Vector3(enemy.transform.position.x, 0, possibleZs[i]), 
+					new Vector3(enemy.transform.position.x + 7, 0, possibleZs[i]), 
 					projectilePrefab.transform.rotation);
 				projectile.GetComponent<DamagingComponent>().creator = enemy;
 
